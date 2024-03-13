@@ -34,7 +34,9 @@ class Course_selection:
 #Use numpy module and its array to
 #Add function to calculate average GPA for a given student
 def calculate_average_gpa(marks):
-    return np.mean(marks)
+    arr = np.array(marks)
+    gpa = np.mean(arr)
+    return gpa
 
 #Weighted sum of credits and marks
 def weighted_sum(credits, marks):
@@ -48,15 +50,12 @@ def sort_students_by_gpa(students):
     return sorted_students
 
 #Display the sorted student list using curses
-def display_student_list(stdscr, students):
-    stdscr.clear()
-    stdscr.addstr(0, 0, "Sorted Student List by GPA (Descending):")
-    for i, student in enumerate(students):
-        stdscr.addstr(i + 1, 0, f"{student.s_name} - GPA: {student.gpa:.2f}")
-    stdscr.refresh()
-    stdscr.getch()
+def display_sorted_student_list(students):
+    print("Sorted Student List by GPA (Descending):")
+    for student in students:
+        print(f"{student.s_name} - GPA: {student.gpa:.2f}")
 
-def main(stdscr):
+def main():
     students = []  #Initialize a list to store student objects
     courses = []   #Initialize a list to store course objects
 
@@ -100,11 +99,10 @@ def main(stdscr):
             # Sort students by GPA
             sorted_students = sort_students_by_gpa(students)
             # Display the sorted student list using curses
-            display_student_list(stdscr, sorted_students)
+            display_sorted_student_list(sorted_students)
         elif choice == 0:
             print("Exiting...")
         else:
             print("Invalid choice. Try again.")
 
-if __name__ == "__main__":
-    curses.wrapper(main)
+main()
