@@ -21,7 +21,7 @@ def main():
     for _ in range(s_number):
         s_id = get_int_input("Input student ID: ")
         s_name = get_input("Input student name: ")
-        s_dob = get_int_input("Input student DoB: ")
+        s_dob = get_input("Input student DoB: ")
         student = Student(s_id, s_name, s_dob)
         students.append(student)
 
