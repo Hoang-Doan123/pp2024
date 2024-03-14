@@ -1,0 +1,4 @@
+<domains.course.Course object at 0x000001E27F2A6060>
+<domains.course.Course object at 0x000001E27F2DA3C0>
+<domains.course.Course object at 0x00000246BFCF87A0>
+<domains.course.Course object at 0x00000246AFF05010>
